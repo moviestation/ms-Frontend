@@ -1,0 +1,418 @@
+// Write your overrides
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html.v-overlay-scroll-blocked {
+  position: fixed;
+}
+
+@media (width <= 768px){
+  html.v-overlay-scroll-blocked {
+    position: relative;
+
+    --v-body-scroll-y: 0px !important;
+  }
+}
+
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (width <= 768px) {
+  html,body {
+    @include hide-scrollbar;
+  }
+}
+
+#nprogress .bar {
+  background: rgb(var(--v-theme-primary)) !important;
+  inset-block-start: env(safe-area-inset-top) !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px rgb(var(--v-theme-primary)), 0 0 5px rgb(var(--v-theme-primary)) !important;
+  inline-size: 5px;
+      transform: rotate(0deg) translate(0, 0);
+}
+
+.match-height.v-row {
+  .v-card {
+    block-size: 100%;
+  }
+}
+
+.v-toast--bottom {
+  z-index: 2500;
+  margin-block-end: env(safe-area-inset-bottom);
+}
+
+.v-toast--top {
+  z-index: 2500;
+  margin-block-start: env(safe-area-inset-top);
+}
+
+.v-dialog > .v-overlay__content > .v-card > .v-card-item {
+  padding: 16px;
+}
+
+/* router view transition fade-slide */
+.fade-slide-leave-active,
+.fade-slide-enter-active {
+  transition: all 0.6s;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(-45px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(45px);
+}
+
+.grid-info-card {
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  padding-block-end: 1rem;
+}
+
+.text-moviepilot {
+  background-clip: text;
+  background-image: linear-gradient(to bottom right,var(--tw-gradient-stops));
+  color: transparent;
+
+  --tw-gradient-from: #818cf8;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+  --tw-gradient-to: #c084fc;
+}
+
+.slider-header {
+  position: relative;
+  display: flex;
+  margin-block: 1.5rem 1rem;
+}
+
+.slider-title {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+@media (width >= 640px){
+  .slider-title {
+      overflow: hidden;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+}
+
+// 美化滚动条
+::-webkit-scrollbar {
+  block-size: 4px;
+  inline-size: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: rgb(var(--v-theme-perfect-scrollbar-thumb));
+  box-shadow: inset 0 0 10px rgba(0,0,0,20%);
+
+  @media(hover){
+    &:hover{
+      background: #a1a1a1;
+    }
+  }
+}
+
+// 当鼠标悬停在可滚动元素上时显示滚动条
+*:hover::-webkit-scrollbar {
+  opacity: 1;
+}
+
+// 当元素正在滚动时显示滚动条
+*:active::-webkit-scrollbar {
+  opacity: 1;
+}
+
+.v-alert--variant-elevated, .v-alert--variant-flat {
+  background: rgb(var(--v-table-header-background));
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+}
+
+.backdrop-blur {
+  --tw-backdrop-blur: blur(8px)!important;
+
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)!important;
+}
+
+.v-toolbar{
+  background: rgb(var(--v-table-header-background));
+}
+
+.v-toast {
+  z-index: 2500 !important;
+ }
+
+ .v-divider {
+  border-color: rgba(var(--v-theme-on-background), var(--v-selected-opacity));
+  opacity:0.75;
+ }
+
+ .apexcharts-title-text {
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
+ }
+
+ .grid-site-card {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  padding-block-end: 1rem;
+}
+
+.grid-media-card {
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+}
+
+.grid-backdrop-card {
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.grid-torrent-card {
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+}
+
+.grid-plugin-card {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.grid-downloading-card {
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.grid-directory-card {
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.grid-filterrule-card {
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.grid-customrule-card {
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+}
+
+.grid-subscribe-card {
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.grid-user-card {
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+}
+
+.grid-app-card {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.grid-workflow-card {
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.v-tabs:not(.v-tabs-pill).v-tabs--horizontal {
+  border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+}
+
+.v-fab__container {
+  padding-block-end: env(safe-area-inset-bottom);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px #777;
+}
+
+.card-cover-blurred::before {
+  position: absolute;
+  backdrop-filter: blur(2px);
+  background: rgba(29, 39, 59, 48%);
+  content: '';
+  inset: 0;
+}
+
+.v-overlay__content .v-list{
+  backdrop-filter: blur(6px);
+  background-color: rgb(var(--v-theme-surface), 0.9) !important;
+}
+
+.v-overlay__content .v-card:not(.bg-primary){
+  backdrop-filter: blur(8px);
+  background-color: rgb(var(--v-theme-surface), 0.95) !important;
+
+  .v-list, .v-table {
+    backdrop-filter: none;
+    background-color: transparent !important;
+  }
+}
+
+.v-menu {
+  .v-list-item:hover {
+    background-color: rgba(var(--v-theme-on-surface), 0.04) !important;
+  }
+}
+
+.v-btn.v-btn--icon {
+  transition: opacity 0.15s ease;
+}
+
+.v-btn.v-btn--icon:hover {
+  opacity: 0.85;
+}
+
+.v-overlay__content {
+  margin-block: env(safe-area-inset-top) env(safe-area-inset-bottom);
+  transition: opacity 0.2s ease !important;
+}
+
+.v-menu > .v-overlay__content {
+  overflow: hidden;
+}
+
+.v-dialog--fullscreen > .v-overlay__content > .v-card {
+  padding-block-end: calc(env(safe-area-inset-top) + env(safe-area-inset-bottom));
+}
+
+.v-dialog > .v-overlay__content {
+  margin-block: env(safe-area-inset-top) env(safe-area-inset-bottom);
+}
+
+.v-bottom-sheet > .v-bottom-sheet__content.v-overlay__content > .v-card {
+  padding-block-end: env(safe-area-inset-bottom);
+}
+
+.settings-icon-button {
+  flex-shrink: 0;
+  min-inline-size: auto;
+}
+
+
+.v-infinite-scroll__side {
+  padding: 0;
+}
+
+.v-menu .v-overlay__content {
+  box-shadow: none !important;
+}
+
+
+// 透明主题特殊样式
+.transparent-app {
+  // 先将所有全局组件定义放在前面，避免CSS优先级问题
+  .v-application, .v-layout, .v-main, .layout-page-content {
+    background: transparent;
+  }
+  
+  // 侧边导航栏
+  .layout-vertical-nav {
+    backdrop-filter: blur(16px);
+    background-color: rgba(var(--v-theme-surface), 0.2);
+    border-inline-end: 1px solid rgba(var(--v-theme-on-surface), 0.05);
+  }
+
+  // 列表
+  .v-list {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--v-theme-surface), 0.3);
+  }
+  
+  // 卡片
+  .v-card:not(.no-blur) {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--v-theme-surface), 0.3);
+
+    .v-list {
+      backdrop-filter: none;
+      background-color: transparent;
+    }
+  }
+
+  // 工具栏
+  .v-toolbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--v-theme-surface), 0.3);
+  }
+  
+  // 表格
+  .v-table {
+    border-radius: 0;
+    background-color: rgba(var(--v-theme-surface), 0.3);
+  }
+  
+  // 页脚
+  .v-footer {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--v-theme-surface), 0.3);
+  }
+
+  // Sheet
+  .v-sheet {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--v-theme-surface), 0.3);
+  }
+  
+  // 页面容器
+  .layout-content-wrapper {
+    background: transparent;
+  }
+  
+  // 无内容区域的背景设为透明
+  .page-content-container {
+    background: transparent;
+  }
+  
+  // 对话框和菜单蒙层样式
+  .v-overlay__scrim {
+    background: rgba(var(--v-overlay-scrim-background), var(--v-overlay-scrim-opacity));
+  }
+
+  // 折叠面板
+  .v-expansion-panel {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--v-theme-surface), 0.3);
+  }
+
+  // 加载占位
+  .v-skeleton-loader {
+    background-color: rgba(var(--v-theme-surface), 0.3);
+  }
+}
+
+// 透明主题下的弹出窗口样式
+html[data-theme="transparent"] {
+  .v-overlay__content {    
+    border-radius: 12px !important;
+    backdrop-filter: blur(10px) !important;
+
+    .v-list {
+      backdrop-filter: blur(10px);
+      background-color: rgb(var(--v-theme-surface), 0.5) !important;
+    }
+
+    .v-card:not(.bg-primary) {
+      backdrop-filter: blur(10px);
+      background-color: rgb(var(--v-theme-surface), 0.5) !important;
+    }
+
+    .v-table thead {
+      background-color: rgb(var(--v-theme-surface), 0.5) !important;
+    }
+  }
+}

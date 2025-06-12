@@ -1,0 +1,11 @@
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  background-repeat: no-repeat;
+}
+
+html {
+  box-sizing: border-box;
+  min-height: calc(100% + env(safe-area-inset-top) + env(safe-area-inset-bottom))
+}

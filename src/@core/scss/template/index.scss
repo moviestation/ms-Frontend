@@ -1,0 +1,42 @@
+@use "sass:map";
+
+// Layout
+@use "../vertical-nav";
+@use "../default-layout";
+@use "default-layout-w-vertical-nav";
+
+// Components
+@use "components";
+
+// Utilities
+@use "utilities";
+@use "../utils";
+
+// Misc
+@use "../misc";
+
+// Dark
+@use "../dark";
+
+// Variables
+@use "variables";
+
+// libs
+@use "libs/perfect-scrollbar";
+@use "libs/vuetify";
+
+a {
+  color: rgb(var(--v-theme-primary));
+  text-decoration: none;
+}
+
+// Vuetify 3 don't provide margin bottom style like vuetify 2
+p {
+  margin-block-end: 1rem;
+}
+
+// Iconify icon size
+svg.iconify {
+  block-size: 1em;
+  inline-size: 1em;
+}

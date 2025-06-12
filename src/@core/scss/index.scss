@@ -1,0 +1,5 @@
+@use "sass:map";
+@use "template/index";
+
+// 保留这个引用以向后兼容，但实际功能已经移至template/index.scss
+@use "variables";

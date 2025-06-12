@@ -1,0 +1,97 @@
+#loading-bg {
+  position: fixed;
+  z-index: 9999;
+  display: block;
+  background: var(--initial-loader-bg, #fff);
+  block-size: 100vh;
+  inline-size: 100vw;
+  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+}
+
+.loading-logo {
+  position: absolute;
+  inset-block-start: 35%;
+  inset-inline-start: calc(50% - 5rem);
+  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+}
+
+/* 添加logo完成动画 - 放大虚化效果 */
+.loading-complete .loading-logo {
+  filter: blur(10px);
+  opacity: 0;
+  transform: scale(1.5);
+}
+
+/* 添加加载背景消失动画 - 放大虚化效果 */
+.loading-complete {
+  filter: blur(15px);
+  opacity: 0;
+  transform: scale(1.2);
+}
+
+.loading {
+  position: absolute;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  block-size: 55px;
+  inline-size: 55px;
+  inset-block-start: 80%;
+  inset-inline-start: calc(50% - 27.5px);
+  transition: opacity 0.6s ease;
+}
+
+/* 完成时隐藏加载动画 */
+.loading-complete .loading {
+  opacity: 0;
+}
+
+.loading .effect-1,
+.loading .effect-2,
+.loading .effect-3 {
+  position: absolute;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  block-size: 100%;
+  border-inline-start: 3px solid var(--initial-loader-color, #eee);
+  inline-size: 100%;
+}
+
+.loading .effect-1 {
+  animation: rotate 1s ease infinite;
+}
+
+.loading .effect-2 {
+  animation: rotate-opacity 1s ease infinite 0.1s;
+}
+
+.loading .effect-3 {
+  animation: rotate-opacity 1s ease infinite 0.2s;
+}
+
+.loading .effects {
+  transition: all 0.3s ease;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes rotate-opacity {
+  0% {
+    opacity: 0.1;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(1turn);
+  }
+}
